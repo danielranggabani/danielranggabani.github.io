@@ -1,5 +1,8 @@
 .container{
     height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 h1{
@@ -27,8 +30,156 @@ p{
     margin-bottom: -0px;
 }
 
+.sekolah{
+    margin-left: -50px;
+    margin-top: 10px;
+}
+
+.history{
+    width: 100%;
+}
+
+.text-history h6{
+    margin-bottom: -15px;
+}
+
+.text-history p{
+    color: #797970;
+}
+
 .service{
     padding-top: 30px;
+}
+
+.skill1{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #C7C8C9;
+    border-radius: 5px;
+    color: #363633;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    -moz-box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.project{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; 
+}
+
+.project1{
+    width: 100%;
+    border: 1px solid #C7C8C9;
+    border-radius: 5px;
+    color: #363633;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    -moz-box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    box-shadow: 5px 5px 10px -9px rgba(54, 54, 51, 1);
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.project-text{
+    padding-top: 10px;
+    text-align: left;
+}
+
+.project-text h6{
+    padding: 0px;
+    line-height: 1;
+}
+
+.project-text p{
+    padding: 0px;
+    line-height: 1;
+}
+
+/* badge */
+.badge-html {
+    display: inline-block;
+    background-color: #e34c26; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.badge-css {
+    display: inline-block;
+    background-color: #1673b5; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.badge-tailwind {
+    display: inline-block;
+    background-color: #0cc4b8; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.badge-wordpress {
+    display: inline-block;
+    background-color: #47a4c9; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+
+/* badge */
+
+.skill-text{
+    text-align: right;
+    height: 100%;
+}
+
+.skill-text h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 0.7;
+}
+
+.skill-text p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    color: #797970;
 }
 
 .icon-certificate{
@@ -138,16 +289,19 @@ p{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .gambar{
     width: 25%;
+    min-width: 250px;
     display: flex;
     font-family: "Poppins", sans-serif;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     color: #363633;
+    margin-bottom: 30px;
 }
 
 .gambar p{
@@ -158,9 +312,77 @@ p{
 
 .teks{
     width: 65%;
+    min-width: 300px;
     margin-bottom: 10px;
 }
 
 .gambar img{
     height: 250px;
+}
+
+/* Media Queries untuk Responsivitas */
+@media screen and (max-width: 992px) {
+    .isi {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gambar {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .teks {
+        width: 100%;
+    }
+    
+    .skill-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .project {
+        grid-template-columns: 1fr;
+    }
+    
+    .sertifikat {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skill-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .sertifikat {
+        grid-template-columns: 1fr;
+    }
+    
+    .tempat-tombol {
+        flex-direction: column;
+    }
+    
+    .tombol1, .tombol2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .contact, .skill {
+        margin-left: 0;
+    }
+    
+    .sekolah {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gambar img {
+        height: 200px;
+    }
+    
+    .project-img {
+        max-height: 200px;
+        object-fit: cover;
+    }
 }
