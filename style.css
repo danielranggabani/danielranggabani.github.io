@@ -80,6 +80,15 @@ p{
     gap: 5px; 
 }
 
+.gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .project1{
     width: 100%;
     border: 1px solid #C7C8C9;
@@ -97,10 +106,27 @@ p{
 }
 
 .project-img{
-    width: 100%;
-    border-radius: 5px;
+    padding-top: 10px;
+    text-align: left;
+    object-fit: fill;
 }
 
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
 .project-text{
     padding-top: 10px;
     text-align: left;
@@ -161,6 +187,32 @@ p{
     font-family: sans-serif;
 }
 
+.badge-python {
+    display: inline-block;
+    background-color: #3b76a3; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.badge-c {
+    display: inline-block;
+    background-color: #004182; /* Warna oranye HTML5 */
+    color: white;
+    font-weight:500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.link{
+    text-decoration: none;
+}
+
 
 /* badge */
 
@@ -208,9 +260,9 @@ p{
 
 .tempat-tombol{
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
     gap: 5px;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 20px;
 }
 
@@ -262,18 +314,7 @@ p{
 }
 
 .tombol1{
-    width: 50%;
-    border: 1px solid #C7C8C9;
-    border-radius: 5px;
-    color: #363633;
-    padding: 10px;
-    background-color: white;
-    text-decoration: none;
-    text-align: center;
-}
-
-.tombol2{
-    width: 50%;
+    width: 100%;
     border: 1px solid #C7C8C9;
     border-radius: 5px;
     color: #363633;
@@ -317,7 +358,29 @@ p{
 }
 
 .gambar img{
-    height: 250px;
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.skill-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.skill1 img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+}
+
+.project1 img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 /* Media Queries untuk Responsivitas */
@@ -326,25 +389,23 @@ p{
         flex-direction: column;
         align-items: center;
     }
-    
     .gambar {
         width: 100%;
         max-width: 300px;
     }
-    
     .teks {
         width: 100%;
     }
-    
     .skill-card {
         grid-template-columns: 1fr 1fr;
     }
-    
     .project {
         grid-template-columns: 1fr;
     }
-    
     .sertifikat {
+        grid-template-columns: 1fr 1fr;
+    }
+    .gallery {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -353,36 +414,78 @@ p{
     .skill-card {
         grid-template-columns: 1fr;
     }
-    
     .sertifikat {
         grid-template-columns: 1fr;
     }
-    
+    .project {
+        grid-template-columns: 1fr;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
     .tempat-tombol {
         flex-direction: column;
     }
-    
     .tombol1, .tombol2 {
         width: 100%;
         margin-bottom: 10px;
     }
-    
     .contact, .skill {
         margin-left: 0;
     }
-    
     .sekolah {
         margin-left: 0;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .gambar img {
-        height: 200px;
+    .gambar img.rounded-circle {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .project1 img.project-img {
+        height: 120px !important;
+    }
+    .gallery-img {
+        height: 170px;
+    }
+
+/* Reset Bootstrap Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gambar Profil */
+.gambar img.rounded-circle {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover;
+    border-radius: 50% !important;
+}
+
+/* Gambar Skill */
+.skill1 img.skill-img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+}
+
+/* Gambar Project */
+.project1 img.project-img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .gambar img.rounded-circle {
+        width: 200px !important;
+        height: 200px !important;
     }
     
-    .project-img {
-        max-height: 200px;
-        object-fit: cover;
+    .project1 img.project-img {
+        height: 150px !important;
     }
 }
